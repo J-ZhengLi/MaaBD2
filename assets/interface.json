@@ -1,13 +1,13 @@
 {
     "controller": [
         {
-            "name": "安卓端",
+            "name": "Android",
             "type": "Adb"
         }
     ],
     "resource": [
         {
-            "name": "官服",
+            "name": "Official",
             "path": [
                 "{PROJECT_DIR}/resource"
             ]
@@ -15,64 +15,64 @@
     ],
     "task": [
         {
-            "name": "启动游戏",
+            "name": "Start Game",
             "entry": "StartGame_Start"
         },
         {
-            "name": "地图采集",
+            "name": "Collect",
             "entry": "Collect_StartGame_HomePage"
         },
         {
-            "name": "地图扫荡",
+            "name": "Battle",
             "entry": "Battle_StartGame_HomePage",
             "option": [
-                "属性石头",
-                "双倍图战斗次数"
+                "StoneKind",
+                "BattleRepeatCount"
             ]
         },
         {
-            "name": "装备制作强化分解炼制",
+            "name": "Equipment Manager",
             "entry": "Equip_HomePage"
         },
         {
-            "name": "白嫖抽卡",
+            "name": "Gacha",
             "entry": "Gacha_BackHomePage"
         },
         {
-            "name": "竞技场",
+            "name": "PVP",
             "entry": "PVP_HomePage",
             "option": [
-                "竞技场战斗次数"
+                "PVPRepeatCount"
             ]
         },
         {
-            "name": "领取日常奖励",
+            "name": "Daily Reward",
             "entry": "GetReward_HomePage",
             "option": [
-                "工会奖励"
+                "GuildReward"
             ]
         },
         {
-            "name": "领取通行证奖励",
+            "name": "Pass Reward",
             "entry": "Pass_HomePage"
         },
         {
-            "name": "领取邮件",
+            "name": "Mail",
             "entry": "Mail_HomePage"
         },
         {
-            "name": "活动图扫荡",
+            "name": "Event",
             "entry": "Event_HomePage",
             "option": [
-                "活动图小游戏扫荡"
+                "Minigame"
             ]
         }
     ],
     "option": {
-        "属性石头": {
+        "StoneKind": {
             "cases": [
                 {
-                    "name": "火",
+                    "name": "Fire",
                     "pipeline_override": {
                         "Battle_FastBattleTouch_StoneSelect": {
                             "target": [
@@ -85,7 +85,7 @@
                     }
                 },
                 {
-                    "name": "水",
+                    "name": "Water",
                     "pipeline_override": {
                         "Battle_FastBattleTouch_StoneSelect": {
                             "target": [
@@ -98,7 +98,7 @@
                     }
                 },
                 {
-                    "name": "风",
+                    "name": "Wind",
                     "pipeline_override": {
                         "Battle_FastBattleTouch_StoneSelect": {
                             "target": [
@@ -111,7 +111,7 @@
                     }
                 },
                 {
-                    "name": "光",
+                    "name": "Light",
                     "pipeline_override": {
                         "Battle_FastBattleTouch_StoneSelect": {
                             "target": [
@@ -124,7 +124,7 @@
                     }
                 },
                 {
-                    "name": "暗",
+                    "name": "Dark",
                     "pipeline_override": {
                         "Battle_FastBattleTouch_StoneSelect": {
                             "target": [
@@ -138,10 +138,10 @@
                 }
             ]
         },
-        "竞技场战斗次数": {
+        "PVPRepeatCount": {
             "cases": [
                 {
-                    "name": "战斗一次",
+                    "name": "Once",
                     "pipeline_override": {
                         "PVP_AutoBattleMAX": {
                             "target": [
@@ -168,10 +168,10 @@
                 }
             ]
         },
-        "双倍图战斗次数": {
+        "BattleRepeatCount": {
             "cases": [
                 {
-                    "name": "战斗一次",
+                    "name": "Once",
                     "pipeline_override": {
                         "Battle_FastBattleTouch2": {
                             "next": [
@@ -192,10 +192,10 @@
                 }
             ]
         },
-        "活动图小游戏扫荡": {
+        "Minigame": {
             "cases": [
                 {
-                    "name": "开启",
+                    "name": "Start",
                     "pipeline_override": {
                         "Event_NormalBattleBack2": {
                             "next": [
@@ -205,7 +205,7 @@
                     }
                 },
                 {
-                    "name": "关闭",
+                    "name": "Leave",
                     "pipeline_override": {
                         "Event_NormalBattleBack2": {
                             "next": [
@@ -216,10 +216,10 @@
                 }
             ]
         },
-        "工会奖励": {
+        "GuildReward": {
             "cases": [
                 {
-                    "name": "开启",
+                    "name": "Start",
                     "pipeline_override": {
                         "GetReward_HomePage": {
                             "next": [
@@ -229,7 +229,7 @@
                     }
                 },
                 {
-                    "name": "关闭",
+                    "name": "Leave",
                     "pipeline_override": {
                         "GetReward_HomePage": {
                             "next": [
@@ -240,10 +240,10 @@
                 }
             ]
         },
-        "测试模式": {
+        "TestMode": {
             "cases": [
                 {
-                    "name": "关闭",
+                    "name": "Leave",
                     "pipeline_override": {
                         "Battle_FinBackMapPage": {
                             "next": []
@@ -251,7 +251,7 @@
                     }
                 },
                 {
-                    "name": "开启",
+                    "name": "Start",
                     "pipeline_override": {
                         "Battle_FinBackMapPage": {
                             "next": [
